@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(E_ERROR | E_PARSE);
 
 /*
     2019-12-08 浦交模拟图V2.95
@@ -266,10 +266,10 @@ function gps_data_get($roadline,$line_start,$line_end,$line_id,$station_data) {
         $mid = round($upmax * 0.65);
 
         if ($v_info['seconds'] < 60) {
-            $res[$x]['dzsj'] = '残り'.$v_info['seconds'].'秒 '.$v_info['distance'].'「m」';
+            $res[$x]['dzsj'] = '剩余'.$v_info['seconds'].'秒 '.$v_info['distance'].'米';
         } else
         {
-            $res[$x]['dzsj'] = '残り'.round($v_info['seconds']/60) .'分 '.$v_info['distance'].'「m」';
+            $res[$x]['dzsj'] = '剩余'.round($v_info['seconds']/60) .'分 '.$v_info['distance'].'米';
         }
         //公交车到站预测
 
@@ -296,7 +296,7 @@ function gps_data_get($roadline,$line_start,$line_end,$line_id,$station_data) {
         //if ($res[$x]['nextlevel']+2 == $upmax) $rate = 0;
 
         if (empty($v_info['sch']['lpName'])) $res[$x]['drivername'] = '未知班次';
-        else $res[$x]['drivername'] = '全行程 '.$res[$x]['lpname'];
+        else $res[$x]['drivername'] = '全程 '.$res[$x]['lpname'];
 
         //判断运营模式是否为区间
         if ($v_info['sch']['bcType'] == 'region') {
@@ -396,10 +396,10 @@ function gps_data_get($roadline,$line_start,$line_end,$line_id,$station_data) {
         //设备时间戳转化
 
         if ($v_info['seconds'] < 60) {
-            $res[$x]['dzsj'] = '残り'.$v_info['seconds'].'秒 '.$v_info['distance'].'「m」';
+            $res[$x]['dzsj'] = '剩余'.$v_info['seconds'].'秒 '.$v_info['distance'].'米';
         } else
         {
-            $res[$x]['dzsj'] = '残り'.round($v_info['seconds']/60) .'分钟 '.$v_info['distance'].'「m」';
+            $res[$x]['dzsj'] = '剩余'.round($v_info['seconds']/60) .'分钟 '.$v_info['distance'].'米';
         }
         //到站预测 判定如在一分钟以内则改显秒数
 
@@ -410,7 +410,7 @@ function gps_data_get($roadline,$line_start,$line_end,$line_id,$station_data) {
         //路牌信息
 
         if (empty($v_info['sch']['lpName'])) $res[$x]['drivername'] = '未知班次';
-        else $res[$x]['drivername'] = '全行程 '.$res[$x]['lpname'];
+        else $res[$x]['drivername'] = '全程 '.$res[$x]['lpname'];
 
         //判断运营模式是否为区间
         if ($v_info['sch']['bcType'] == 'region') {

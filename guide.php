@@ -85,7 +85,6 @@
             left: 0;
             top: 0;
         }
-        
         ul#xc li
         {
             padding-left: 0.5em;
@@ -121,23 +120,20 @@
        function onBridgeReady(){
 			WeixinJSBridge.call('hideOptionMenu');
 		}
-		
 		$(function(){
-		
 		if (typeof WeixinJSBridge == "undefined"){
 			if( document.addEventListener ){
 				document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
 			}else if (document.attachEvent){
-				document.attachEvent('WeixinJSBridgeReady', onBridgeReady); 
+				document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
 				document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
 			}
 		}else{
 			onBridgeReady();
 		}
-		
+
 		});
 
-		
         function showalert(param) {
             //alert("aaaaa");
             var key = param;
@@ -822,7 +818,7 @@
     <div>
         <article>
             <div class="queryBox">
-                <input type="text" autocomplete="off" id="bus" placeholder="Please Type the line name here" value="" name="bus"
+                <input type="text" autocomplete="off" id="bus" placeholder="请输入线路名称" value="" name="bus"
                     oninput="showalert(this.value)" />
                 <input type="submit" id="check" value="" name="icon" />
             </div>
@@ -832,13 +828,12 @@
             </div>
             <div class="error" id="error">
             </div>
-            <div class="taps">
-                <p>
-                    <span>1、</span>请输入浦东公交的线路 如"576路"、"沪南线"、"外高桥3路"、"989路";</p>          
-	        <p>
-                    <span>2、</span>❤ Made By <a href="https://github.com/sjlleo/pudong-bus-operation-diagram">Leo</a></p> 
-               <p>
-            </div>
+		<div class="taps">
+			<p><span>1、</span>请输入浦东公交的线路 如"576路"、"沪南线"、"外高桥3路"、"989路"</p>
+			<p><span>2、</span>源代码：By <a href="https://github.com/sjlleo/pudong-bus-operation-diagram">Leo</a></p>
+			<p><span>3、</span>本站运营：By <a href="https://github.com/BobLiu0518/pudong-bus-operation-diagram">BobLiu0518</a></p>
+			<p><span>4、</span>其他功能：&nbsp;<a href="gps/index.html">GPS地图</a>&nbsp;<a href="BusState/index.php">车辆状态</a></p>
+		</div>
                         <div class="history">
         <div class="h-title">历史查询</div>
         <div class="h-items">
